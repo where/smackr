@@ -10,7 +10,7 @@ unless smack_is_already_loaded
 end
 
 ## Load Smackr
-%w(main version chat).each do |file|
+%w(main version chat room).each do |file|
   require File.dirname(__FILE__)+"/smackr/#{file}"
 end
 

@@ -1,5 +1,6 @@
 java_import 'org.jivesoftware.smack.XMPPConnection'
 java_import 'org.jivesoftware.smack.ChatManager'
+
 class Smackr
 
   attr_reader :xmpp_connection, :chat_manager
@@ -35,6 +36,14 @@ class Smackr
                                 :message_callback => message_callback))
   end
 
+
+  def join_room(roomname, opts = {}, &message_callback)
+    nickname = opts[:nickname] || self.username || 'Bot'
+    Smackr::Room.new(opts.merge(:roomname => roomname,
+                                :connection => self.xmpp_connection,
+                                :nickname => nickname,
+                                :message_callback => message_callback))
+  end
 private
 
   def connection
