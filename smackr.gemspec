@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/where/smackr/"
   s.summary     = %q{Smackr is a JRuby gem which wraps the Smack XMPP Java library}
   s.description = %q{Smackr is a JRuby gem which wraps the Smack XMPP Java library}
-  s.platform    = Gem::Platform::JAVA
+  s.platform    = Gem::Platform::CURRENT
 
   s.rubyforge_project = "smackr"
 
