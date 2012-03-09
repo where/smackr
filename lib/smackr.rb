@@ -1,6 +1,10 @@
 require 'java'
 
-## Load our version of Smack, if the our user hasn't loaded one already
-unless defined?(org.jivesoftware.smack)
+## Load our version of Smack (with smackx), if the our user hasn't loaded
+## one already
+smack_is_already_loaded = org.jivesoftware.smack.Connection rescue nil
+unless smack_is_already_loaded
   require File.dirname(__FILE__)+'/java/smack.jar'
+  require File.dirname(__FILE__)+'/java/smackx.jar'
+  org.jivesoftware.smack.Connection # this does stuff
 end
