@@ -24,5 +24,13 @@ class Smackr
 
       @room.join(opts[:nickname], opts[:password], history, SmackConfiguration.get_packet_reply_timeout());
     end
+
+    def send_message(msg)
+      if msg.is_a?(String)
+        self.room.send_message(msg)
+      else #TODO Make this actually work with non-string messages
+        raise Exception, "YELL AT BOB TO MAKE THIS WORK!"
+      end
+    end
   end
 end
