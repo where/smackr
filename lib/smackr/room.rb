@@ -49,7 +49,7 @@ class Smackr
 
       def process_packet(packet)
         room.messages << packet
-        room.message_callback.call(packet) if room.message_callback
+        room.message_callback.call(packet, room.room) if room.message_callback
       end
     end
   end

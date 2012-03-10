@@ -33,9 +33,9 @@ class Smackr
       def initialize(opts={})
         self.chat = opts[:chat]
       end
-      def process_message(conn, msg)
+      def process_message(chat_in, msg)
         chat.messages << msg
-        chat.message_callback.call(conn, msg) if chat.message_callback
+        chat.message_callback.call(msg, chat_in) if chat.message_callback
       end
     end
 
