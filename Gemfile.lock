@@ -1,15 +1,25 @@
 PATH
   remote: .
   specs:
-    smackr (0.0.1-java)
+    smackr (0.0.3.a-java)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    metaclass (0.0.1)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
+    shoulda (3.0.1)
+      shoulda-context (~> 1.0.0)
+      shoulda-matchers (~> 1.0.0)
+    shoulda-context (1.0.0)
+    shoulda-matchers (1.0.0)
 
 PLATFORMS
   java
   ruby
 
 DEPENDENCIES
+  mocha
+  shoulda
   smackr!
