@@ -20,9 +20,7 @@ class Smackr
     end
 
     def send_message(msg)
-      if msg.is_a?(String)
-        self.chat.send_message(msg)
-      else if msg.is_a?(Message)
+      if msg.is_a?(String) || msg.is_a?(Message)
         self.chat.send_message(msg)
       else #TODO take a proper Message object instead of just the message body
         raise Exception, "NOT IMPLEMENTED, SUCKA"
