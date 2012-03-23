@@ -1,7 +1,6 @@
 class Packet
   class Message
-    attr_accessor :message_type => 'normal'
-    attr_accessor :subject, :thread, :body, :error
+    attr_accessor :message_type, :subject, :thread, :body, :error
 
     def initialize(opts={})
       puts 'message init started'
@@ -14,7 +13,7 @@ class Packet
         end
       end
 
-      'normal,chat,group_chat,headline,error'.each_line(',') {|s| opts[:message_type] == s ? @message_type = s : 'no')}
+      @message_type = opts[:message_type]
       @subject = opts[:subject]
       @thread = opts[:thread]
       @body = opts[:body]
